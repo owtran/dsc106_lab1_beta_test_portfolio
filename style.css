@@ -1,6 +1,314 @@
+/*
+Lab 2 Step 2.4: 
+  color accent variable storing color inside it -> \
+  accent color -> uses color in color accent -> accent color affects type checkbox,radio,range-> apply to form controls 
+*/
+html {
+    --color-accent: oklch(65% 50% 0);
+    accent-color: var(--color-accent);
+}
+
+
 body {
-  /* Set line height to 1.5 times the font size
-	   and use the OS’s UI font as the website font
+  /* 
+  Lab 1: Set line height to 1.5 times font size
+	   and use OS’s UI font as the website font
+     (normal font size/line height 1.5x font size/_normal interface font 
 	 */
   font: 100%/1.5 system-ui;
+
+  /*
+  Lab 2 Step 1: 
+  body not wider than 100 characters of text, center the body, give breathing room left/right with padding 
+  TEXT - WIDTH - CENTER - SIDE SPACE 
+  */
+  max-width: 100ch;
+  margin-inline: auto; 
+  padding-inline: 1em;
+
 }
+
+
+
+  /*
+  Lab 2 Step 2.1: 
+  Flexbox Container -> makes navigation links sit in Flexbox
+  and makes each link take equal space 
+  text-decor: removes underline 
+  color -> removes default blue link color 
+  text-a: centers text 
+  padding: adds space around each link 
+
+
+  Lab 2 Step 2.2: 
+  add nav a.current: 
+  margin-bottom -> adds empty space underneath element 
+  border bottom -> thickness of line, solid line, color 
+  nav a.curent -> thats why we put class = "current" in html -> mean nav -> find <a> that has class = current 
+  */
+
+nav { 
+  display: flex;
+  margin-bottom: 1em; 
+  border-bottom: 1px solid oklch(80% 3% 200);
+}
+
+nav a { 
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  padding: 0.5em; 
+}
+
+nav a.current { 
+  border-bottom: 0.4em solid oklch(80% 3% 200);
+  padding-bottom: 0.1em; 
+}
+
+
+/*
+Lab 2 Step 2.3: 
+select <a> link in nav when mouse is hovering over it so when hover over it
+the link under mouse gets the border bottom style and the padding! 
+*/
+nav a:hover {
+  border-bottom: 0.4em solid var(--color-accent);
+  padding-bottom: 0.1em;
+}
+
+
+/*
+Lab 2 Step 3.1 
+Make input boxes, textarea, button use same font as rest of page! 
+Temporarily add top to bottom layout for email sending! 
+
+Name
+[________________________]
+
+Email
+[________________________]
+
+Message
+[________________________]
+[________________________]
+
+[         Submit         ]
+*/
+
+input, 
+textarea,
+button { 
+  font: inherit;
+}
+
+
+/* Temporary Format (top to bottom) 
+label, 
+input, 
+textarea,
+button { 
+  display: block;
+}
+
+
+input, 
+textarea,
+button { 
+  width: 100%; 
+  box-sizing: border-box;
+}
+
+label { 
+  margin-block: 1em; 
+}
+
+*/
+
+
+
+
+/* CSS Grid 
+   display ... -> turns form into Grid container 
+   grid... creates two columns 
+    auto -> first col only needs to be as wide as its text 
+    1fr -> 2nd col gets rest of avaialble space 
+    gap -> adds space btw rows and coumns 
+
+    Name      [_____________________]
+    Email     [_____________________]
+    Message   [_____________________]
+
+
+
+    label: 
+    display ... -> each label has its own mini grid
+    gridtemp... -> uses same col setup as parent 
+    gridcol -> lets whole label stretch from first grid line to last grid line 
+    button gridcol -> makes button stretch across entire row too 
+*/
+form { 
+  display: grid; 
+  grid-template-columns: auto 1fr; 
+  gap: 1em; 
+}
+
+label {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / -1;
+}
+
+button {
+  grid-column: 1 / -1;
+}
+
+
+
+
+
+
+
+/* Step 4 -> Dummy Project Page 
+
+1. project cards 
+  displaygrid -> turns .projects to a grid 
+  grid... -> make max columns that can fit 
+
+  .project article -> bc each article has 3 pieces (h2. img, p) so span 3 -> each article uses 3 grid rows 
+*/ 
+
+/* Lab 2 Step 4.2
+   Makes a responsive grid with as many project columns as can fit */
+.projects { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  gap: 1em;
+}
+
+/* Lab 2 Step 4.3 
+   Each project card includes 3 rows -> heading, image, paragraph */
+.projects article { 
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+}
+
+.projects h2 { 
+  margin: 0;
+}
+
+
+h1 { 
+  font-size: 400%;
+}
+
+/* Lab 2 Step 4.4 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 { 
+  line-height: 1.1; /* Makes heading lines tighter and tries to make multi line headings break evener */
+  text-wrap: balance; 
+}
+
+
+
+
+
+
+/* =========================
+   Lab 2 Step 5: Resume edits -> Custom
+
+  .resume... -> find HTML element with class "resume" and style everythign inside that main resume area! 
+   ========================= */
+  
+
+.resume { 
+  max-width: 70ch; /* keeps resume from getting too wide and centers!  */
+  margin-inline: auto; 
+}
+
+.resume section { 
+  margin-block: 2em; /* adds vertical space between section     */
+}
+
+.resume h2 { 
+  border-bottom: 2px solid var(--color-accent); /*  adds a colored line under each section heading  2px - thickness, solid - line style, var(--color-accent) = color depends on html {...}   */
+  padding-bottom: 0.25em;
+}
+
+.resume article { 
+  margin-block: 1.5em;  /*  adds a space between each item inside a section    */
+}
+
+.resume i { 
+  font-weight: bold;  /*   makes italic labels bold as well!   */
+}
+
+.resume img { 
+  max-width: 100%; /*  prevent images from taking over the whole page    */
+  height: auto; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+Syntax:
+
+1. Link CSS: 
+<link 
+  rel = "stylesheet" 
+  href = "style.css"> 
+
+2. Basic CSS Rule: 
+selector { 
+  property: value; 
+} 
+
+selector: target, property: what changes, value: how it changes 
+
+ex) 
+h1 { 
+  color: deeppink; 
+  font-size: 32px;
+}
+
+
+3. Common Selectors: 
+h1 -> element selector 
+.current -> class selector 
+#main -> id selector 
+h1 em -> descendant selector 
+a.current -> AND / intersection 
+h1, h2, h3 -> OR/union 
+
+*/
+
+
+
+

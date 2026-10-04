@@ -17,10 +17,10 @@
 <body>
     <!-- Navigation Menu w link to GitHub Profile-->
     <nav> 
-        <a href = "./"> Home </a>
-        <a href = "projects/"> Projects </a>
-        <a href = "contact/"> Contact </a>
-        <a href = "resume/"> Resume </a>
+        <a href = "index.html" class = "current"> Home </a>
+        <a href = "projects/index.html"> Projects </a>
+        <a href = "contact/index.html"> Contact </a>
+        <a href = "resume/index.html"> Resume </a>
         <a href="https://github.com/owtran" target="_blank">GitHub</a>
     </nav>
 
@@ -42,108 +42,5 @@
 
 
 
-
-<!-- 
-Resume Page: 
-    <head> ... </head> invisisble part for HTML page 
-    <body> 
-        <header> -> visible content inside body 
-                <h1> Owen Tran </h1> 
-                <p> Data Science Student </p> 
-        </header> 
-    </body> 
-
-
-    <section> -> a major section of the page </section> 
-    <article> -> one self-contained item inside a section (so like subsection basically)
-        <section> 
-            <h2> Experience </h2> 
-            <article> Job 1 </article> 
-            <article> Job 2 </article> 
-        </section> 
-    <time datetime = "2026-09"> September 2026 </time> -> specifically for dates 
-    <h1> -> big heading 
-    <h2> -> smaller heading 
-    <p> -> paragraph text 
-    
-
-    <ul> -> unordered list 
-    <li> -> list item (one bullet point)
-
-    Makes a bullet list with python sql tableau! 
-    <ul>
-        <li>Python<li> 
-        <li>SQL</li>
-        <li>Tableau</li>
-    </ul> 
-
-Contact Me Page: (How websites collect info from users)
-
-Visual: 
-    Process: User tpyes info -> HTML <form> -> submit -> mailto: Email application opens -> User sends email to me 
-    Contact Me 
-
-    Email:
-    [ someone@gmail.com ]
-
-    Subject:
-    [ Question about your portfolio ]
-
-    Message:
-    [ Hey Owen, I saw your project... ]
-
-    [ Submit ]
-
-<form> -> contains stuff user fills out ... </form> 
-<input> -> makes a small text box </input> 
-<textarea> -> makes a big text box </textarea> 
-<button> -> makes a clickable button to submit the form </button> 
-<label> -> tells person what each box is for </label> 
-        <label> 
-            what the fields is called ex) Email
-            the actual field itself ex) <input name = "email" type = "email"> 
-        </label> 
-action -> where should the form data go? 
-method = "POST" -> send the information as submitted form data 
-enctype = "text/plain" -> format the submitted information as normal readable text 
-
-
-
-
-git add. (file or files or all)
-git commit -m "..." (adds to like loading phase) 
-git push (updates the GitHub)
-
-image: 
-    <img 
-        src = "images/Owen_Picture.png"
-        alt = "Photo of me at Lake Arrowhead!"
-    >
-
-
-link css sheet to HTML page: 
-    <link 
-        rel = "stylesheet" -> tells that file linking is a stylesheet (rel = relationship) 
-        href = "style.css" -> load the CSS file from same folder as html file (href = where link should go)
-    >
-
-Navigation Menu: 
-    -> have to add to home page, projects and contact page! 
-    <nav> -> navigation (put top of body)
-        <a href = "..."> Link Text </a> 
-            <a> means anchor (creates a clickable link)
-            ./ -> current folder
-            Link Text -> actual clickable text  
-
-        href = "./" -> stay in current holder (hyperlink reference) -> where link should go 
-        ../ -> go up one folder 
-
-        target = "_blank" -> makes it open in a new tab! 
-
-
-
--->
-
-
-
-
+<!-- Old: <a href = "./"> Home </a> 
+         new: with current cause tells CSS what page im curently on!  --> 
