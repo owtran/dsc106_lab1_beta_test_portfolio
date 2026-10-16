@@ -6,6 +6,8 @@ Lab 2 Step 2.4:
 html {
     --color-accent: oklch(65% 50% 0);
     accent-color: var(--color-accent);
+    color-scheme: light dark;
+    
 }
 
 
@@ -47,10 +49,11 @@ body {
   nav a.curent -> thats why we put class = "current" in html -> mean nav -> find <a> that has class = current 
   */
 
-nav { 
+nav {
   display: flex;
-  margin-bottom: 1em; 
-  border-bottom: 1px solid oklch(80% 3% 200);
+  margin-bottom: 1em;
+  --border-color: oklch(50% 10% 200 / 40%);
+  border-bottom: 1px solid var(--border-color);
 }
 
 nav a { 
@@ -75,6 +78,8 @@ the link under mouse gets the border bottom style and the padding!
 nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
   padding-bottom: 0.1em;
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
+
 }
 
 
@@ -256,8 +261,19 @@ h6 {
 
 
 
+/* Placing the theme switching to top right corner instead of bar in middle! */
 
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%;
+}
 
+/* Make the dropdown use the same font as the page. */
+.color-scheme select {
+  font-family: inherit;
+}
 
 
 
@@ -308,6 +324,7 @@ a.current -> AND / intersection
 h1, h2, h3 -> OR/union 
 
 */
+
 
 
 

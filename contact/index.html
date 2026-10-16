@@ -1,56 +1,33 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title> Contact </title>
-        <link rel = "stylesheet" href = "../style.css">
-    </head>
+  <head>
+    <title>Contact</title>
+    <link rel="stylesheet" href="../style.css">
+    <script type="module" src="../global.js"></script>
+  </head>
 
+  <body>
+    <h1>Contact</h1>
 
-    <body>
-        <!-- Navigation Menu -->
-        <nav>
-            <a href = "../index.html"> Home </a>
-            <a href = "./"> Contact </a>
-            <a href = "../resume/index.html"> Resume </a>
-            <a href = "../projects/index.html"> Projects </a>
-        </nav>
+    <!-- Open an email draft addressed to you. -->
+    <form action="mailto:owtran@ucsd.edu">
 
-        <h1> Contact </h1>
+      <!-- Subject of the email. -->
+      <label>
+        Subject:
+        <input name="subject" type="text" value="Test Subject">
+      </label>
 
-        <!-- Form element: -->
-        <form 
-            action = "mailto:owtran@ucsd.edu"
-            method = "POST"
-            enctype = "text/plain">
+      <!-- Body of the email. -->
+      <label>
+        Message:
+        <textarea name="body">Hello, this is a test message.</textarea>
+      </label>
 
-        <!-- Contact form fields inside form!: -->
-        <!-- Added a label too: -->
-            <label> 
-                Email: 
-                <input
-                    name = "email" type = "email" value = "test@example.com"> 
-            </label>
-
-            <label>
-                Subject:
-                <input 
-                    name = "subject" type = "text" value = "Test Subject"> 
-            </label>
-
-            <label>
-                Message: 
-                <textarea name = "body"> Hello, this is a test message. </textarea>
-            </label>
-
-            <!-- Submit button: -->
-            <button> Submit </button>
-            
-        </form>
-
-    </body>
-
+      <button type="submit">Submit</button>
+    </form>
+  </body>
 </html>
-
 
 
 <!--
