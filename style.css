@@ -355,3 +355,212 @@ h1, h2, h3 -> OR/union
   margin: 0;
   font-size: 2rem;
 }
+
+
+
+
+/* 
+Lab 5 
+#1. pie plot 
+
+*/
+
+#projects-pie-plot {
+  max-width: 20em;
+  margin-block: 2em;
+  overflow: visible;
+}
+
+
+
+.legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  gap: 1em;
+  padding: 1em;
+  border: 1px solid #ccc;
+  list-style: none;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.swatch {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-color: var(--color);
+  border-radius: 0.2em;
+}
+
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  flex-wrap: wrap;
+}
+
+.container > .legend {
+  flex: 1;
+}
+
+
+#projects-pie-plot path {
+  transition: opacity 300ms;
+}
+
+#projects-pie-plot:has(path:hover) path:not(:hover) {
+  opacity: 0.5;
+}
+
+
+.selected {
+  --color: oklch(60% 45% 0) !important;
+}
+
+#projects-pie-plot path.selected {
+  fill: var(--color);
+}
+
+#projects-pie-plot path {
+  cursor: pointer;
+}
+
+
+/*
+Lab 5
+*/
+
+#stats dl.stats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem 1rem;
+}
+
+#stats dl.stats dt {
+  grid-row: 1;
+  color: gray;
+  font-size: 0.9rem;
+}
+
+#stats dl.stats dd {
+  grid-row: 2;
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+@media (max-width: 700px) {
+  #stats dl.stats {
+    grid-template-columns: 1fr;
+  }
+
+  #stats dl.stats dt,
+  #stats dl.stats dd {
+    grid-row: auto;
+  }
+}
+
+
+dl.info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25rem 1rem;
+}
+
+dl.info dt {
+  opacity: 0.6;
+}
+
+dl.info dd {
+  margin: 0;
+}
+
+.tooltip {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+}
+
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+circle:hover {
+  transform: scale(1.5);
+}
+
+
+
+dl.info.tooltip {
+  background-color: white;
+  color: #222;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.2);
+  z-index: 1000;
+}
+
+
+dl.info {
+  transition-duration: 500ms;
+  transition-property: opacity, visibility;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8;
+  }
+}
+
+.selection {
+  fill-opacity: 0.1;
+  stroke: black;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
+}
+
+circle.selected {
+  fill: #ff6b6b;
+}
+
+
+
+#language-breakdown {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem 2rem;
+  text-align: center;
+}
+
+#language-breakdown dt {
+  grid-row: 1;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#language-breakdown dd {
+  grid-row: 2;
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+
+#chart .gridlines line {
+  stroke: #ddd;
+  stroke-opacity: 1;
+}

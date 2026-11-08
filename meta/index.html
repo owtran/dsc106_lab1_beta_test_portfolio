@@ -1,0 +1,67 @@
+<!DOCTYPE html> 
+<html lang = "en"> 
+
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> 
+        Meta
+    </title>
+
+    <link rel = "stylesheet" href = "../style.css">
+
+    <script type = "module" src = "../global.js"> </script>
+
+</head>
+
+<h1>Meta</h1>
+<p>Explore the code and commit history behind my website.</p>
+
+<div id="stats"></div>
+<script type="module" src="main.js"></script>
+
+<h2>Commits by time of day</h2>
+<div id="chart"></div>
+
+<p id="selection-count">No commits selected</p>
+
+
+<dl id="language-breakdown" class="stats"></dl>
+
+
+<dl id="commit-tooltip" class="info tooltip" hidden>
+  <dt>Commit</dt>
+  <dd><a id="commit-link" href="" target="_blank"></a></dd>
+
+  <dt>Date</dt>
+  <dd id="commit-date"></dd>
+
+  <dt>Time</dt>
+  <dd id="commit-time"></dd>
+
+  <dt>Author</dt>
+  <dd id="commit-author"></dd>
+
+  <dt>Lines</dt>
+  <dd id="commit-lines"></dd>
+</dl>
+
+
+
+<body> 
+    <h1> Meta </h1>
+    <p> We are basically making a dashboard with a scatter plot representing the 
+        commits we did in GitHub for our project and each dot shows the date, author, and number 
+        of lines for the commit! 
+
+        Some of the functionality include hovering over a dot to see the commit details,
+        dragging a box to selecting the commits together, and showing the # of languages for 
+        all of the commits 
+    </p>
+
+</body>
+
+
+
+</html>
